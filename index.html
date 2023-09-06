@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from epiktheme.com/demos/html/Gamix-Preview/demos/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Sep 2023 17:19:05 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="HTML5 Template, eSports, Gaming, Tournament, Landing, Page, SEO" />
+    <meta name="description" content="Gamix - eSports & Gaming HTML5 Template" />
+    <title>Tic-Tac-Toe - Portfolio Project Landing Page</title>
+
+    <!--font-awesome icons link-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/venobox.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <!--main style file-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body id="darkmode">
+    <!-- Preloader -->
+    <div class="loader_screen preloader" id="preloader">
+        <div class="loader loader-box">
+            <svg viewBox="0 0 80 80">
+                <rect x="8" y="8" width="64" height="64"></rect>
+            </svg>
+        </div>
+    </div>
+    <!-- Preloader -->
+
+    
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contact-model-large" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h5 class="modal-title">Contact <b>.</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row contact-box">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Full Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email Address">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Your Message"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="main-btn model-btn">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+    <!-- HEADER AREA START -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="navber">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Code-Lova<span>.</span></a>
+            <div class="menu-main" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto menu-item">
+                    <li class="nav-item">
+                        <a class="nav-link nl-m-top abc mobile-content-hide"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <div class="search top-search">
+                            <button type="button" class="close fix-close">×</button>
+                            <form>
+                                <input type="search" value="" placeholder="Search Here" />
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </form>
+                        </div>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link nl-m-top account-icon" href="index.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="custom-menubar">
+            <ul class="nav-link-block">
+                <li>
+                    <a href="#banner" class="menu-link">Home</a>
+                </li>
+                <li>
+                    <a href="#about" class="menu-link">About Us</a>
+                </li>
+                <li>
+                    <a href="#feature" class="menu-link">Features</a>
+                </li>
+                <li>
+                    <a class="menu-link" data-toggle="modal" data-target="#contact-model-large">Contact</a>
+                </li>
+                
+            </ul>
+            <ul class="responsive-nav">
+                <li>
+                    <a class="nav-link nl-m-top abc"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    <div class="search top-search">
+                        <button type="button" class="close fix-close">×</button>
+                        <form>
+                            <input type="search" value="" placeholder="Search Here" />
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                </li>
+                
+                <li>
+                    <a class="nav-link nl-m-top" href="index.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+            <div class="menu-close">
+                <a class="hide-menu-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER AREA END -->
+
+    <!-- BANNER AREA START -->
+    <section id="banner">
+        <div class="backtotop">
+            <a href="#banner"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+        </div>
+        <div class="follow-us">
+            <span>Follow us</span>
+            <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fb_boy_jero"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://github.com/code-lova"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/channel/UCSu1NnFmfFLNqltDyBl07tQ"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="banner-arrow">
+            <i class="fa fa-angle-left arrow-al" aria-hidden="true"></i>
+            <i class="fa fa-angle-right arrow-ar" aria-hidden="true"></i>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-8 col-md-6 landscape-m-auto tab-m-auto banner-img">
+                    <img src="images/banner.png" alt="banner-img" class="img-fluid">
+                    <a class="vid-btn venobox" data-autoplay="true" data-vbtype="video" href="https://youtu.be/um7Ycc-KbKk"><i class="fa fa-play" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-lg-5 m-auto banner-txt">
+                    <div class="banner-main">
+                        <div class="banner-item">
+                            <h3>Tic-Tac-Toe</h3>
+                            <h3>Online</h3>
+                            <p>It's very famous multi-player game any one can easily play. 
+                                It is really time pass game during school time and even any time with your friends. 
+                                Any one can play and even easily understand the game.</p>
+                            <a href="game.html" class="main-btn">Join Game</a>
+                        </div>
+                        <div class="banner-item">
+                            <h3>Multiplayer</h3>
+                            <h3>Game</h3>
+                            <p>It's very famous multi-player game any one can easily play. 
+                                It is really time pass game during school time and even any time with your friends. 
+                                Any one can play and even easily understand the game.</p>
+                            <a href="game.html" class="main-btn">Join Game</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BANNER AREA END -->
+
+    <!-- GAMES AREA START -->
+    <section id="games">
+        <div class="container game-line">
+            <div class="gl-one gl"></div>
+            <div class="gl-two gl"></div>
+            <div class="row game-pa">
+                <div class="col-lg-4 col-md-11 tab-m-auto">
+                    <div class="game-box">
+                        <span>Feature's</span>
+                        <h3>Tic-Tac-Toe</h3>
+                        <p>Consisting of 3 features, the online multiplayer tic-tac-toe game has:</p>
+                        <div>
+                        <ul>
+                            <li style="color: aliceblue;">1.Require Player Username</li>
+                            <li style="color: aliceblue;">2.Simple interface and gameplay</li>
+                            <li style="color: aliceblue;">3.Runs on both mobile and computer devices</li>
+                        </ul>
+                        </div>
+                        <br>
+                        <a href="#" class="main-btn">Play Game</a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="game-main">
+                        <div class="col-lg-4 game-item text-center">
+                            <div class="game-img">
+                                <img src="images/player_login.png" alt="game-img" class="img-fluid">
+                                <div class="lightbox-overlay">
+                                    <a href="images/player_login.png" data-lightbox="roadtrip" data-title="Gallery"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <a href="#">Players Username</a>
+                            <div class="star">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 game-item text-center">
+                            <div class="game-img">
+                                <img src="images/interface.png" alt="game-img" class="img-fluid">
+                                <div class="lightbox-overlay">
+                                    <a href="images/interface.png" data-lightbox="roadtrip" data-title="Gallery"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <a href="#">Interactive Interface</a>
+                            <div class="star">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 game-item text-center">
+                            <div class="game-img">
+                                <img src="images/cross_platform.png" alt="game-img" class="img-fluid">
+                                <div class="lightbox-overlay">
+                                    <a href="images/cross_platform.png" data-lightbox="roadtrip" data-title="Gallery"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <a href="#">Cross Platform Devices</a>
+                            <div class="star">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 game-item text-center">
+                            <div class="game-img">
+                                <img src="images/extra.jpeg" alt="game-img" class="img-fluid">
+                                <div class="lightbox-overlay">
+                                    <a href="images/extra.jpeg" data-lightbox="roadtrip" data-title="Gallery"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <a href="#">Game Play</a>
+                            <div class="star">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- GAMES AREA END -->
+
+    <!-- FEATURES AREA START -->
+    <section id="feature">
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <div class="col-lg-12 heading">
+                        <h3>Features</h3>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="join-bg">
+                        <div class="row">
+                            <div class="col-lg-6 join-txt">
+                                <span>Let's Play Together</span>
+                                <h3>Player username Required!</h3>
+                                <p>The game requires the player to fill in their preferred username 
+                                    they wish to use while playing the game. As this will be used to 
+                                    connect to the game server informing a second player to join.
+                                </p>
+                                <a href="game.html" class="main-btn">Join Game</a>
+                            </div>
+                            <div class="col-lg-6 join-img">
+                                <img src="images/features/player_login.png" alt="join-img" class="">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="join-bg">
+                        <div class="row">
+                            <div class="col-lg-6 join-txt">
+                                <span>No complication</span>
+                                <h3>Simple Interface and Gameplay!</h3>
+                                <p>
+                                    Tic-tac-toe game usually easy to access from any device and pretty to understand 
+                                    and play. Its a three-by-three grid by two players, 
+                                    who alternately place the marks X and O in one of the nine spaces in the grid.
+                                    There is no universally agreed rule as to who plays first, 
+                                    but in this article the convention that X plays first is used.
+                                    Players soon discover that the best play from both parties leads to a draw. 
+                                </p>
+                                <a href="game.html" class="main-btn">Join Game</a>
+                            </div>
+                            <div class="col-lg-6 join-img">
+                                <img src="images/features/interface.png" alt="join-img" class="">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="join-bg">
+                        <div class="row">
+                            <div class="col-lg-6 join-txt">
+                                <span>Pass your time..</span>
+                                <h3>Cross platform devices!</h3>
+                                <p>
+                                   Can be played in any device; either a mobile, computer device as its not depenndent 
+                                   on OS platform, works on both andriod and ios devices.
+                                </p>
+                                <a href="game.html" class="main-btn">Join Game</a>
+                            </div>
+                            <div class="col-lg-6 join-img">
+                                <img style="width: 500px;" src="images/features/crossp.png" alt="join-img" class="">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- FEATURES AREA END -->
+
+    <!-- ABOUT AREA START -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 heading">
+                    <h3>About</h3>
+                </div>
+            </div>
+            <div class="row about-pt">
+                <div class="col-lg-5 col-sm-9 m-sm-auto about-img">
+                    <div class="about-txt-overlay">
+                        <h3 class="counter" data-counterup-time="2000" data-counterup-delay="30" data-counterup-beginat="1">12</h3>
+                        <span>Years of Leading</span>
+                    </div>
+                    <img src="images/unnamed.jpeg" alt="about-img" class="img-fluid">
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-txt">
+                        <span>Inspiration</span>
+                        <h3>EASIEST OF ALL BOARD GAMES<b>.</b></h3>
+                        <p>As someone who loves to code and try out new things in the area of technology, i have always 
+                            admired those who build games which we play on our device, and i have always wondered what logic 
+                            and language was used. As time passed i developed real love and interest for coding/programing,
+                            became enthusiastic about how the web works, then i came across ALX school for software engineering referred to me by a friend.</p>
+                        <p class="mb-3">With all the knowledge gotton as i build myself as a software engineer, i then decided to
+                            build a game as an idea for my portfolio project from scratch to demonstate how much knowledge i have been
+                            exposed to so far. Link to my: <a href="https://www.linkedin.com/in/jeremiah-ebizo-6b6183108">LinkedIn</a> , <a href="https://github.com/code-lova">github</a> and <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fb_boy_jero">Twitter</a> profile</p>
+                            <p>Github project repo: <a href="">Real Time Tic-tac-Toe Game</a></p>
+                            <p></p>
+                        <a href="https://www.alxafrica.com/" class="main-btn">Signup for ALX</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ABOUT AREA END -->
+
+   
+   
+    <!-- WATCH AREA START -->
+    <section id="watch">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 watch-item">
+                    <div class="video-overlay">
+                        <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://youtu.be/um7Ycc-KbKk"><i class="fa fa-play" aria-hidden="true"></i></a>
+                    </div>
+                    <img src="images/demo.jpeg" alt="watch-img" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WATCH AREA END -->
+
+
+   
+
+    <!-- SUBSCRIBE AREA START -->
+    <section id="subscribe">
+        <div class="container zindex">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 subscribe-txt">
+                    <h3>Real time tic-tac-toe game play with friends<b>.</b></h3>
+                </div>
+                <div class="col-lg-6 col-md-4 text-center">
+                    <a href="#" class="subscribe-btn">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SUBSCRIBE AREA END -->
+
+    <!-- FOOTER AREA START -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 footer-logo">
+                    <a href="index.html">Code-Lova<b>.</b></a>
+                    <p>My name is Ebizo Jeremiah a software engineer intern at ALX. I am also a web app developer</p>
+                    <div class="footer-social">
+                        <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fb_boy_jero"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://github.com/code-lova"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/channel/UCSu1NnFmfFLNqltDyBl07tQ"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-4 footer-menu">
+                    <h3>Site Menu</h3>
+                    <a href="#">Home</a>
+                    <a href="#feature">Features</a>
+                    <a href="#about">About Us</a>
+                </div>
+                <div class="col-lg-2 col-sm-4 footer-menu">
+                    <h3>Useful Links</h3>
+                    <a href="https://github.com/code-lova">Github</a>
+                    <a href="https://www.youtube.com/channel/UCSu1NnFmfFLNqltDyBl07tQ">youtube</a>
+                    <a href="#">Site Condition</a>
+                </div>
+                <div class="col-lg-2 col-sm-4 footer-menu">
+                    <h3>Information</h3>
+                    <a href="#">FAQ</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER AREA END -->
+
+    <!-- COPY_RIGHT AREA START -->
+    <section id="copy_right">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-7 copy-right-txt">
+                            <p><i class="fa fa-copyright" aria-hidden="true"></i> 2023 - Developed by <a href="https://delacliquedesigns.com/">Delaclique.</a></p>
+                        </div>
+                        <div class="col-lg-6 col-sm-5 text-right copy-right-txt">
+                            <p>All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- COPY_RIGHT AREA END -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/venobox.min.js"></script>
+    <!--<script src="js/lightbox.min.js"></script>-->
+    <script src="js/counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+
+<!-- Mirrored from epiktheme.com/demos/html/Gamix-Preview/demos/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Sep 2023 17:19:50 GMT -->
+</html>

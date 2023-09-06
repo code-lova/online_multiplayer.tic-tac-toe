@@ -1,0 +1,93 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(20, 18, 18);
+    display: grid;
+    place-items: center;
+    font-family: 'Lucida Sans';
+    color: #fff;
+}
+
+h1 {
+    margin: 50px 0 50px 0;
+    font-size: 5rem;
+    color: #fff;
+    margin-top: 100px;
+    -webkit-text-stroke: .5px rgb(186, 20, 20);
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+
+
+
+
+input {
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+button {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    margin-left: 12px;
+}
+
+img {
+    width: 30px;
+    margin-left: 125px;
+}
+
+h6 {
+    margin-left: 60px;
+    font-size: small;
+}
+
+#cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.btn {
+
+    font-size: 2rem;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    margin: 0;
+    background-color: rgb(206, 203, 203);
+    border-radius: 10px;
+
+}
+
+#find {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 10px;
+    width: 250px;
+    background-color: rgb(77, 21, 4);
+}
+
+.btn:hover {
+    background-color: rgb(226, 228, 230);
+}
+
+button.enabled {
+    opacity: 1;
+}
+
+p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.flexbox-item3{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}

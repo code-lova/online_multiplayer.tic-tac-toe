@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Online Multiplayer Tic-Tac-Toe Game</title>
+</head>
+<body>
+    <div class="flex-heading">
+        <h1>Tic-Tac-Toe
+            <p>~Online Multiplayer Game~</p>
+        </h1>
+    </div>
+
+    <div class="flex-container">
+
+        <div class="flexbox-item flexbox-item1">
+            <b id="userCont">You: <span id="user"></span></b>
+        </div>
+
+        <div class="flexbox-item flexbox-item2">
+                <h3 id="valueCont">You are playing as <span id="value"></span></h3>
+                <h3 id="whosTurn">X's Turn</h3>
+
+            <div>
+                <h4 id="enterName">Enter Your Name : </h4>
+                <input type="text" placeholder="Name" id="name" autocomplete="off"><br/>
+                <button id="find">Join Game</button>
+            </div>
+            
+            <img src="loading.gif" id="loading" alt="">
+            <h6 id="searching">Waiting for other player...</h6>
+            
+
+
+            <div class="grid-container" id="bigCont">
+
+                <div id="cont">
+
+                    <button id="btn1" class="btn"></button>
+                    <button id="btn2" class="btn"></button>
+                    <button id="btn3" class="btn"></button>
+                    <button id="btn4" class="btn"></button>
+                    <button id="btn5" class="btn"></button>
+                    <button id="btn6" class="btn"></button>
+                    <button id="btn7" class="btn"></button>
+                    <button id="btn8" class="btn"></button>
+                    <button id="btn9" class="btn"></button>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="flexbox-item flexbox-item3">
+            <b id="oppNameCont">Opponent: <span id="oppName"></span></b>
+        </div>
+
+        
+
+    </div><!-- End flex box container-->
+
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+    
+<script>
+    document.getElementById("loading").style.display="none"
+    document.getElementById("searching").style.display="none"
+    document.getElementById("bigCont").style.display="none"
+    document.getElementById("userCont").style.display="none"
+    document.getElementById("oppNameCont").style.display="none"
+    document.getElementById("valueCont").style.display="none"
+    document.getElementById("whosTurn").style.display="none"
+
+    const socket = io();
+
+    let name;
+
+    document.getElementById("find").addEventListener("click",function(){
+        name=document.getElementById("name").value
+
+        document.getElementById("user").innerText=name
+
+        if(name==null || name==''){
+            alert("Please enter a name")
+        }else{
+            //used to send the value name to our game server - backend
+            //sending this to the backend
+            socket.emit("find", {name:name})
+
+            document.getElementById("loading").style.display="block"
+            document.getElementById("searching").style.display="block"
+            document.getElementById("find").disabled=true
+        }
+    });
+
+    //Sendind the data from backend to front-end using socket.on
+    //connecting the two players together in the game server
+    socket.on("find",(e)=>{
+
+        let allPlayersArray = e.allPlayers
+        console.log(allPlayersArray)
+
+        if(name != null) {
+            document.getElementById("userCont").style.display = "block"
+            document.getElementById("oppNameCont").style.display = "block"
+            document.getElementById("valueCont").style.display = "block"
+            document.getElementById("loading").style.display = "none"
+            document.getElementById("searching").style.display = "none"
+            document.getElementById("name").style.display = "none"
+            document.getElementById("find").style.display = "none"
+            document.getElementById("enterName").style.display = "none"
+            document.getElementById("bigCont").style.display = "block"
+            document.getElementById("whosTurn").style.display = "block"
+            document.getElementById("whosTurn").innerText="X's Turn"
+        }
+        
+
+        let oppName
+        let value
+
+        const foundObj=allPlayersArray.find(obj=>obj.p1.p1name == `${name}` || obj.p2.p2name == `${name}`) 
+        foundObj.p1.p1name==`${name}` ? oppName=foundObj.p2.p2name : oppName=foundObj.p1.p1name
+        foundObj.p1.p1name==`${name}` ? value=foundObj.p1.p1value : value=foundObj.p2.p2value
+
+        document.getElementById("oppName").innerText=oppName
+        document.getElementById("value").innerText=value
+    })
+
+    //So now we are sending data to the back end when 
+    //the playes click any of the 9buttons to start playing
+    document.querySelectorAll(".btn").forEach(e => {
+        e.addEventListener("click", function () {
+            let value = document.getElementById("value").innerText
+            e.innerText = value
+
+            socket.emit("playing", { value: value, id: e.id, name: name })
+
+        })
+    })
+
+
+    //Getting the value of he button clicked from the back end
+    socket.on("playing", (e) => {
+        const foundObject = (e.allPlayers).find(obj => obj.p1.p1name == `${name}` || obj.p2.p2name == `${name}`);
+
+        p1id = foundObject.p1.p1move
+        p2id = foundObject.p2.p2move
+
+        //if the foundobject plus sum is divisible by 2 
+        //and the reminder is 0
+        if ((foundObject.sum) % 2 == 0) {
+            document.getElementById("whosTurn").innerText = "O's Turn"
+        }
+        else {
+            document.getElementById("whosTurn").innerText = "X's Turn"
+        }
+
+        //if one player clicks on a button, change the value 
+        //of the others player box 
+        if (p1id != '') {
+            document.getElementById(`${p1id}`).innerText = "X"
+            document.getElementById(`${p1id}`).disabled = true
+            document.getElementById(`${p1id}`).style.color = "red"
+        }
+        if (p2id != '') {
+            document.getElementById(`${p2id}`).innerText = "O"
+            document.getElementById(`${p2id}`).disabled = true
+            document.getElementById(`${p2id}`).style.color = "black"
+        }
+
+        //Using check as a varable to get the player name
+        // and Object clicked
+        check(name, foundObject.sum)
+
+    })
+
+    //Checking the winner of the game
+    function check(name, sum){
+
+        //channging the inner text of all the buttons
+        //Example: if the btn1 is empty, we create a varable called b1 assign it 
+        //to "a" and if it not empty, it will just be the inner text
+        document.getElementById("btn1").innerText == '' ? b1 = "a" : b1 = document.getElementById("btn1").innerText
+        document.getElementById("btn2").innerText == '' ? b2 = "b" : b2 = document.getElementById("btn2").innerText
+        document.getElementById("btn3").innerText == '' ? b3 = "c" : b3 = document.getElementById("btn3").innerText
+        document.getElementById("btn4").innerText == '' ? b4 = "d" : b4 = document.getElementById("btn4").innerText
+        document.getElementById("btn5").innerText == '' ? b5 = "e" : b5 = document.getElementById("btn5").innerText
+        document.getElementById("btn6").innerText == '' ? b6 = "f" : b6 = document.getElementById("btn6").innerText
+        document.getElementById("btn7").innerText == '' ? b7 = "g" : b7 = document.getElementById("btn7").innerText
+        document.getElementById("btn8").innerText == '' ? b8 = "h" : b8 = document.getElementById("btn8").innerText
+        document.getElementById("btn9").innerText == '' ? b9 = "i" : b9 = document.getElementById("btn9").innerText
+
+        //matching if each btn value in a role, column or diaginally are all same first
+        if ((b1 == b2 && b2 == b3) || (b4 == b5 && b5 == b6) || (b7 == b8 && b8 == b9) || (b1 == b4 && b4 == b7) || (b2 == b5 && b5 == b8) || (b3 == b6 && b6 == b9) || (b1 == b5 && b5 == b9) || (b3 == b5 && b5 == b7)) {
+
+            socket.emit("gameOver", {name:name})
+
+            setTimeout(()=>{
+                //if sum is even alert X won else O won
+                sum%2==0 ? alert("'X' WON THE GAME..!!") : alert("O WON THE GAME..!!")
+                //Then reload the page
+                setTimeout(()=>{
+                    location.reload()
+                }, 1000)
+
+            },100)
+            //else if there is a draw..
+        }else if(sum==10){
+
+            socket.emit("GameOver", {name:name})
+
+            setTimeout(()=>{
+                //if sum is even alert X won else O won
+                alert("It's a DRAW..!!")
+                //Then reload the page
+                setTimeout(()=>{
+                    location.reload()
+                }, 1000)
+
+            },100)
+        }
+
+
+    }
+
+
+    
+
+</script>
+</html>
